@@ -1,0 +1,24 @@
+create table users (
+id	int(5)   primary key AUTO_INCREMENT,
+imie    varchar(16) ,
+nazwisko varchar(16),
+login    varchar(16) not null ,
+haslo    varchar(16) not null,
+email    varchar(16) not null,
+url    varchar(50) )
+    
+
+
+create table html(
+    id int(5) primary key AUTO_INCREMENT,
+    text varchar(50),
+    title varchar(32),
+    userId int(5),
+    headerColor varchar(32),
+    footerColor varchar(32),
+    containerColor varchar(32)
+    fontSize varchar(32),
+    fontWeight varchar(32),	
+    fontColor varchar(32)	
+)
+ALTER TABLE `html` ADD `fontSize` VARCHAR(32) NULL AFTER `containerColor`, ADD `fontWeight` VARCHAR(32) NULL AFTER `fontSize`, ADD `fontColor` VARCHAR(32) NULL AFTER `fontWeight`;

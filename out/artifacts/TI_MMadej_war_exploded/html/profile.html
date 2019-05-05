@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entities.Page</title>
+    <link rel="stylesheet" href="css/Styles.css">
+    <style>
+        article{
+            padding: 10px;
+            margin: 10px;
+        }
+        .art2{
+            padding: 10px;
+        }
+        .button{
+            margin:10px;
+            padding:10px;
+        }
+        header{
+        [[HCOLOR]]
+        }
+        footer{
+        [[FCOLOR]]
+        }
+        .container{
+        [[CONTAINERCOLOR]]
+        }
+
+        #art{
+            [[FONTSIZE]]
+            [[FONTWEIGHT]]
+            [[FONTCOLOR]]
+        }
+
+    </style>
+
+</head>
+<body>
+<header><h1>HEADER</h1>
+</header>
+<div class="container">
+    <div class="left">
+        <p><br>
+        </p>
+    </div>
+
+    <div class="content">
+        <section>
+            <article id ="art" class="art1">
+                [[CONTENT]]
+            </article>
+        </section>
+    </div>
+    <div class="right">
+        <aside>
+            <article class="art2">
+                ZALOGOWANY<br>
+                LOGIN:
+                [[LOGIN]]
+            </article>
+            <form><input type="submit" name="profile" value="PROFIL" />
+            </form>
+
+        </aside>
+    </div></div>
+<footer>
+    &copy Stopka|2019
+</footer>
+</body>
+</html>

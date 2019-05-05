@@ -1,0 +1,341 @@
+
+*{
+
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+body{
+
+    font-weight: bolder;
+    font-size: 20px;
+ 
+}
+
+
+
+
+header{
+    background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 225px;
+    font-size: 30px;
+    
+    
+
+}
+
+footer{
+   
+    background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+  
+}
+
+
+
+main{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+
+
+article{
+    margin: 10px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: row;
+}
+
+section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.zakres-container{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 90px;
+}
+
+#zakres{
+   
+    min-height: 100px;
+}
+
+
+
+.input-container{
+
+    width: 100%;
+}
+
+.input-header{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    padding: 5px;
+    border: 2px solid black;
+    width: 180px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.container{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.input{
+    margin: auto;
+}
+
+
+
+.output-container{
+
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    min-width: 350px;
+   
+}
+
+
+.output-header{
+
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+.output{
+   
+    margin: 30px 50px 30px 15px ;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+nav{
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+
+.nav-link{
+
+    background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    margin:15px;
+   
+}
+
+
+
+.aside-container{
+    min-height: 250px;
+    background-color: silver;
+    margin: 10px 10px 5px 25px;
+}
+
+
+.news-header{
+    font-weight: bolder;
+    font-size: 22px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.news-content{
+    min-height: 180px;
+    background-color: white;
+    margin: 15px;
+    max-width: 100%;
+}
+
+.text-padding{
+    padding: 30px 10px 15px 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    section {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+    }
+    .output-container {
+        width: 100%;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    footer{
+        position: static;
+    }
+
+    .aside-container{
+        min-height: 300px;
+    }
+
+}
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entities.Page</title>
+    <link rel="stylesheet" href="css/Styles.css">
+    <style>
+        article{
+            padding: 10px;
+            margin: 10px;
+        }
+        .art2{
+            margin:  30px;
+            padding: 10px;
+        }
+
+        .art1{
+            text-align: justify;
+        }
+        img{
+            float:left;
+            margin: 20px;
+            padding: 10px;
+        }
+        .data{
+            float:left;
+            margin: 10px;
+        }
+        .left{
+            width:29%;
+
+        }
+        .content{
+            width:50%;
+        }
+        .right{
+            width:20%;
+        }
+        aside{
+            margin-right: 100px;
+        }
+        ol{
+            list-decoration: none;
+        }
+        .links{
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+        #dodaj,#edytuj,#ustaw{
+            margin:10px;
+            padding:10px;
+            width: 200px;}
+
+        #right-form{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+    </style>
+</head>
+<body>
+<header><h1>HEADER</h1>
+</header>
+<div class="left">
+    <div class="links">
+        <form>
+            <input type="submit" id="dodaj" name="action" value="DODAJ STRONE"></input>
+            <input type="submit" id="edytuj" name="action" value="EDYTUJ STRONE"></input>
+            <input type="submit" id="ustaw" name="action" value="USTAW KOLOR"></input>
+        </form>
+
+    </div>
+</div>
+<div class="content">
+    <section>
+        <article id ="art" class="art1">
+            <img src="
+[[AVATAR]]
+" width="150px" height="150px"/>
+
+            <div class ="data">
+                <p>Imie :
+                    [[IMIE]]
+                </p> <p>Nazwisko :
+                [[NAZWISKO]]
+            </p>
+                <p>Email :
+                    [[EMAIL]]
+                </p>
+                <form>
+                    <input type="submit" name="edit" value="EDYTUJ" />
+                </form>
+            </div>
+        </article>
+    </section>
+</div>
+<div class="right">
+    <aside>
+        <article class="art2">
+            ZALOGOWANY<br>
+            LOGIN :
+            [[LOGIN]]
+        </article>
+        <form id="right-form"><input type="submit" name="profil" value="PROFIL" />
+            <input type="submit" name="profil" value="WYLOGUJ" />
+        </form>
+    </aside>
+</div>
+<footer>
+    &copy Stopka|2019
+</footer>
+</body>
+</html>
+
+
+
+
+
+

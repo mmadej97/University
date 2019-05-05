@@ -1,0 +1,208 @@
+
+var currDate = new Date(Date.now());
+
+
+function getDate(){
+  
+    document.getElementById("date").innerHTML = "DATA: " + getDay(currDate) + "." +  getMonth(currDate) + "." + currDate.getFullYear();
+}
+
+
+function getDay(date){
+
+    var day = date.getDate();
+    if(day < 10 ){
+         day = "0" + day;     
+    }
+
+    return day;
+}
+
+
+function getMonth(date){
+
+    var month = date.getMonth() + 1;
+    if(month < 10 ){
+         month = "0" + month;     
+    }
+
+    return month;
+}
+
+
+function getHour(date){
+
+    var hour = date.getHours();
+    if(hour < 10 ){
+         hour = "0" + hour;     
+    }
+
+    return hour;
+}
+
+function getMinutes(date){
+
+    var minutes = date.getMinutes();
+    if(minutes < 10 ){
+         minutes = "0" + minutes;     
+    }
+
+    return minutes;
+}
+
+
+
+function getTime(){
+
+    document.getElementById("hour").innerHTML = "GODZINA: " +  getHour(currDate) + ":" + getMinutes(currDate) ;
+}
+
+
+
+
+function changeDate(){
+
+    var beginning = new Date(2016,10,01);
+    var diff = new Date(currDate - beginning);
+    var days = Math.ceil(diff/1000/60/60/24);
+
+    document.getElementById("days").innerHTML = "CHODZĘ JUŻ NA UCZELNIE: "  + days + " DNI";
+}
+
+
+
+
+function validation(){
+
+ var lowerNum = document.getElementById("lowerNum").value;
+ var higherNum = document.getElementById("higherNum").value;
+
+    const reg = /^-?[0-9]*$/    
+  
+    if((lowerNum == "") || (higherNum == "")){
+        window.alert("Nie uzupełniłeś wszystkich pól")
+        return false;
+    }else if (!reg.test(lowerNum) || !reg.test(higherNum) ){
+        window.alert("Podaj cyfrę");
+        return false;
+    }else if(lowerNum > higherNum){
+        window.alert("Podałeś odwrotną kolejność liczb")
+        return false;
+    }
+
+    return true;
+}
+
+
+function range(num1, num2){
+    
+    var str = "";
+    
+    for(var i = num1; i <= num2; i++){
+        
+        if(str == ""){
+            str = i;
+        }else{
+            str = str + " , " + i;
+        }
+    }
+    
+    return str;    
+}
+
+
+
+function isInFibonacci(num){
+
+    
+    if (num == 0 || num == 1) 
+        return true;
+
+    var MAX = 60;
+    var f0 = 0, f1 = 1, fn;
+
+    for (var i = 2; i <= MAX; i++)
+    {
+        fn = f0 + f1;
+        if (fn == num) 
+            return true;
+        f0 = f1;
+        f1 = fn;    
+    }
+    return false;
+
+
+}
+
+
+function ciagFibonacciego(num1, num2 ){
+
+
+    
+    var fibo = "";
+
+    for(var i = num1; i <= num2; i++){
+
+      if(isInFibonacci(i))
+        fibo =  fibo + " " + i;
+    }
+
+
+    return fibo;
+ 
+
+}
+
+
+function suma(str){
+ 
+    const reg = /\d+/g;
+    var tab = str.match(reg);
+ 
+    var sum = 0;
+    var num;
+    for(var i = 0 ; i < tab.length; i++){
+        num = new Number(tab[i]);
+        sum += num;
+    }
+ 
+    return sum;
+ 
+}
+
+function calculate(){
+
+    var lowerNum = document.getElementById("lowerNum").value;
+    var higherNum = document.getElementById("higherNum").value;
+   
+
+
+    if(validation() ){
+      
+
+        var zak  = range(lowerNum, higherNum);
+        var fibo = ciagFibonacciego(lowerNum,higherNum);
+        var sum  = suma(fibo);
+        
+        
+        document.getElementById("zakres").innerHTML = zak;
+        document.getElementById("fibonacci").innerHTML = fibo;
+        document.getElementById("suma").innerHTML = sum;
+    
+
+    }
+
+}
+
+
+
+
+
+
+
+window.onload = getDate();
+window.onload = getTime();
+window.onload = changeDate();
+
+
+

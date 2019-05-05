@@ -1,0 +1,238 @@
+
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entities.Page</title>
+
+    <style>
+
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        header {
+            background: silver;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .left {
+            height: 100%;
+            float: left;
+            width: 30%;
+            align-items: center;
+        }
+
+        .left nav {
+            margin-left: 150px;
+        }
+
+
+        .content {
+            float: left;
+            width: 40%;
+            height: 525px;
+            text-align: center;
+        }
+
+
+        .right {
+            float: left;
+            width: 20%;
+        }
+
+        footer {
+            background-color: silver;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            bottom:0;
+            left:0;
+            height: 100px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        @media screen and (max-width: 800px) {
+
+
+            body{
+                display: flex;
+                flex-direction: column;
+            }
+
+
+
+            .main-inner,.left, .left-inner, .right, .content {
+
+                display: flex;
+                width: 100% !important;
+                height: 100% !important;
+                margin-left: 5px !important;
+                flex-direction: column;
+            }
+
+
+            input{
+                width: 100%;
+            }
+            footer{
+                position: static;
+                width: 100%;
+            }
+
+        }
+
+
+
+
+        .main-inner{
+            width: 100%;
+            height: 100%;
+            margin-bottom: 100px;
+        }
+
+        .left-inner{
+
+            width: 60%;
+            height: 100%;
+            margin-top: 10px;
+
+            margin-left: 200px;
+            border: 1px solid black;
+        }
+
+
+        article{
+            padding: 10px;
+            margin: 10px;
+        }
+        .art2{
+            margin:  30px;
+            padding: 10px;
+        }
+
+        .art1{
+            text-align: justify;
+        }
+        img{
+            float:left;
+            margin: 20px;
+            padding: 10px;
+        }
+        .data{
+            float:left;
+            margin: 10px;
+        }
+
+        .content{
+            width:48%;
+            margin-top: 10px;
+            margin-left: 30px;
+            border: 1px solid black;
+        }
+        .right{
+            margin-top: 10px;
+            margin-left: 15px;
+            border: 1px solid black;
+            width: 18%;
+        }
+
+
+        aside{
+            margin-right: 100px;
+        }
+        ol{
+            list-decoration: none;
+        }
+        .links{
+            margin: 10px 15px 0px 15px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #dodaj,#edytuj,#ustaw{
+            margin:10px;
+            padding:10px;
+            width: 200px;}
+
+        #right-form{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+    </style>
+</head>
+<body>
+<header><h1>HEADER</h1>
+</header>
+<div class = "main-inner">
+    <div class="left">
+        <div class="left-inner">
+            <div class="links">
+                <form>
+                    <input type="submit" id="dodaj" name="action" value="DODAJ STRONE"></input>
+                    <input type="submit" id="edytuj" name="action" value="EDYTUJ STRONE"></input>
+                    <input type="submit" id="ustaw" name="action" value="USTAW KOLOR"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <section>
+            <article id ="art" class="art1">
+                <img src="
+    [[AVATAR]]
+    " width="150px" height="150px"/>
+
+                <div class ="data">
+                    <p>Imie:
+                        [[IMIE]]
+                    </p> <p>Nazwisko:
+                    [[NAZWISKO]]
+                </p>
+                    <p>Email:
+                        [[EMAIL]]
+                    </p>
+                    <form>
+                        <input type="submit" name="edit" value="EDYTUJ" />
+                    </form>
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="right">
+        <aside>
+            <article class="art2">
+                ZALOGOWANY<br>
+                LOGIN:
+                [[LOGIN]]
+            </article>
+            <form id="right-form"><input type="submit" name="profil" value="PROFIL" />
+                <input type="submit" name="profil" value="WYLOGUJ" />
+            </form>
+        </aside>
+    </div>
+</div>
+<footer>
+    &copy Stopka|2019
+</footer>
+</body>
+</html>
+
+
+
+
+
